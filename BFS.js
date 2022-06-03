@@ -1,26 +1,4 @@
-class Node {
-  constructor(val) {
-    this.val = val;
-    this.left = null;
-    this.right = null;
-  }
-}
-
-// const a = new Node('a');
-// const b = new Node('b');
-// const c = new Node('c');
-// const d = new Node('d');
-// const e = new Node('e');
-// const f = new Node('f');
-
-
-//      a
-//    /   \
-//   b     c
-//  / \     \
-// d   e     f
-
-
+const { Node, a, b, c, d, e, f } = require('./BinaryTree');
 
 const bfsTraverse = (rootNode) => {
   const queue = [rootNode];
@@ -44,23 +22,6 @@ const bfs = (rootNode, target) => {
   return false;
 }
 
-
-// console.log(bfs(a, 'b'));
-
-
-const a = new Node(3);
-const b = new Node(2);
-const c = new Node(7);
-const d = new Node(4);
-const e = new Node(-2);
-const f = new Node(5);
-
-a.left = b;
-a.right = c;
-b.left = d;
-b.right = e;
-c.right = f;
-
 const sumTree = (headNode) => {
   const queue = [headNode];
   let sum = 0;
@@ -74,4 +35,6 @@ const sumTree = (headNode) => {
   return sum;
 }
 
+bfsTraverse(a);
+console.log(bfs(a, 5));
 console.log(sumTree(a));

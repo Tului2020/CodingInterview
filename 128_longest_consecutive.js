@@ -1,4 +1,5 @@
 const longestConsecutive = (nums) => {
+<<<<<<< HEAD
   if (!nums.length) return 0;
   let longestStreak = 1;
   let currentStreak = 1;
@@ -22,4 +23,12 @@ const longestConsecutive = (nums) => {
 // console.log(longestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]));
 console.log(longestConsecutive([100, 4, 200, 1, 3, 2]));
 
+=======
+
+}
+
+
+
+console.log(longestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]));
+>>>>>>> ba72aa7fdda79f5aed6a0905e58a6b14ba53c6fb
 

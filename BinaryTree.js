@@ -23,3 +23,10 @@ module.exports = {
   Node,
   a, b, c, d, e, f
 }
+
+//           a(3)
+//         /     \
+//       b(2)     c(7)
+//      /    \        \
+//    d(4)   e(-2)    f(5)
+

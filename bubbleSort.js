@@ -8,14 +8,9 @@ const bubbleSort = (unsortedArray) => {
     for (let i = 0; i < sortedArr.length - 1; i++) {
       if (sortedArr[i] > sortedArr[i + 1]) {
         isSorted = false;
-        const tempItem = sortedArr[i];
-        sortedArr[i] = sortedArr[i + 1];
-        sortedArr[i + 1] = tempItem;
+        [sortedArr[i], sortedArr[i + 1]] = [sortedArr[i + 1], sortedArr[i]];
       }
-      // console.log(sortedArr);
     }
-    // console.log('<------------------------------->');
-
   }
   return sortedArr;
 }

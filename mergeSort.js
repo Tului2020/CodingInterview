@@ -19,7 +19,8 @@ const mergeHelper = (leftArr, rightArr) => {
   return mergedArray.concat(leftArr).concat(rightArr);
 }
 
-console.log(mergeSort([34, 321, 4, 324, 1,31,4,32,432,14,3,214,31,2]));
+console.log(mergeSort([34, 321, 4, 324, 1, 31, 4, 32, 432, 14, 3, 214, 31, 2]));
+console.log(mergeSort([4, 8, 7, 2, 11, 1, 3]));
 
 
 

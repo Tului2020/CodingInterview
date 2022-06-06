@@ -16,6 +16,34 @@ class Graph {
   showNodes() {
     console.log(this.nodes);
   }
+
+  bfs(source, destination) {
+    const queue = [source];
+    const visitedNodes = {};
+
+    while (queue.length) {
+      const currentNode = queue.shift();
+      if (visitedNodes[currentNode]) continue; // see if visited
+
+      if (currentNode === destination) return true; // see if its destination
+
+      visitedNodes[currentNode] = true; // mark as visted
+
+      this.nodes[currentNode].forEach(c => (!visitedNodes[c]) && queue.push(c));
+    }
+
+    return false;
+  }
+
+  dfs(source, destination, visitedNodes = {}) {
+    if (visitedNodes[source]) return false;
+    if (source === destination) return true;
+
+    visitedNodes[source] = true;
+
+    return this.nodes[source].reduce((acc, neighbor) => acc || this.dfs(neighbor, destination, visitedNodes), false);
+  }
+
 }
 
 /**
@@ -37,7 +65,7 @@ g.addEdge('Tim', 'Lee');
 g.addEdge('Ann', 'John');
 g.addEdge('Ann', 'Lee');
 
-g.showNodes()
-
+// g.showNodes();
+console.log(g.dfs('Vova', 'Johsn'));
 
 

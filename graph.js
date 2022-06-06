@@ -23,13 +23,14 @@ class Graph {
 
     while (queue.length) {
       const currentNode = queue.shift();
-      if (visitedNodes[currentNode]) continue; // see if visited
+      console.log(currentNode);
+      if (visitedNodes[currentNode]) continue;
 
-      if (currentNode === destination) return true; // see if its destination
+      if (currentNode === destination) return true;
 
-      visitedNodes[currentNode] = true; // mark as visted
+      visitedNodes[currentNode] = true;
 
-      this.nodes[currentNode].forEach(c => (!visitedNodes[c]) && queue.push(c));
+      this.nodes[currentNode].forEach(edge => !visitedNodes[edge] && queue.push(edge));
     }
 
     return false;
@@ -41,7 +42,7 @@ class Graph {
 
     visitedNodes[source] = true;
 
-    return this.nodes[source].reduce((acc, neighbor) => acc || this.dfs(neighbor, destination, visitedNodes), false);
+    return this.nodes[source].reduce((found, edge) => found || this.dfs(edge, destination, visitedNodes), false);
   }
 
 }
@@ -51,6 +52,9 @@ class Graph {
 //       |   \
  John - Ann -  Lee
  */
+
+//  BFS => Vova, Tom, Ann, Lee, John
+//  DFS => Vova, Tim, Ann, John, Lee
 
 const g = new Graph();
 g.addNode('Vova');
@@ -66,6 +70,7 @@ g.addEdge('Ann', 'John');
 g.addEdge('Ann', 'Lee');
 
 // g.showNodes();
-console.log(g.dfs('Vova', 'Johsn'));
+console.log(g.bfs('Vova', 'John'));
+// console.log(g.dfs('Vova', 'Lee'));
 
 

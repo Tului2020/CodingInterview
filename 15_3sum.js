@@ -15,10 +15,10 @@ const threeSum = (nums, target = 0) => {
         left++;
       } else {
         results.push([nums[i], nums[left], nums[right]]);
-        while (nums[right] === nums[right - 1]) right--;
-        while (nums[left] === nums[left + 1]) left++;
         left++;
         right--;
+        while (nums[right] === nums[right + 1]) right--;
+        while (nums[left] === nums[left - 1]) left++;
       }
     }
   }

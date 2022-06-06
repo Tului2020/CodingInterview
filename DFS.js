@@ -7,9 +7,9 @@ const depthFirstTraverseR = (node) => {
   depthFirstTraverseR(node.right);
 }
 
-console.log('<-------- depthFirstTraverseR -------->');
-depthFirstTraverseR(a);
-console.log('<-------- depthFirstTraverseR -------->');
+// console.log('<-------- depthFirstTraverseR -------->');
+// depthFirstTraverseR(a);
+// console.log('<-------- depthFirstTraverseR -------->');
 
 const depthFirstTraverseNR = (headNode) => {
   const stack = [headNode];
@@ -22,7 +22,7 @@ const depthFirstTraverseNR = (headNode) => {
   }
 }
 
-depthFirstTraverseNR(a);
+// depthFirstTraverseNR(a);
 
 const sumTree = (node) => {
   if (!node) return 0;
@@ -30,6 +30,14 @@ const sumTree = (node) => {
   return sumTree(node.left) + sumTree(node.right) + node.val;
 }
 
-console.log(sumTree(a));
+// console.log(sumTree(a));
 
+const DFS = (node, target) => {
+  if (!node) return false;
+  if (node.val === target) return true;
+
+  return DFS(node.left, target) || DFS(node.right, target);
+}
+
+console.log(DFS(a, -12))
 
